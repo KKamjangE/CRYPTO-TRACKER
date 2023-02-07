@@ -5,6 +5,7 @@ import {
   useParams,
   Link,
   Outlet,
+  useMatch,
 } from "react-router-dom";
 import styled from "styled-components";
 import { useState, useEffect } from "react";
@@ -58,7 +59,7 @@ const Tabs = styled.div`
   margin: 25px 0;
   gap: 10px;
 `;
-const Tab = styled.span`
+const Tab = styled.span<{ isActive: boolean }>`
   text-align: center;
   text-transform: uppercase;
   font-size: 12px;
@@ -66,6 +67,8 @@ const Tab = styled.span`
   background-color: rgba(0, 0, 0, 0.5);
   padding: 7px 0;
   border-radius: 10px;
+  color: ${(props) =>
+    props.isActive ? props.theme.accentColor : props.theme.textColor};
   a {
     display: block;
   }
@@ -131,6 +134,8 @@ function Coin() {
   const { state } = useLocation();
   const [info, setInfo] = useState<InfoData>();
   const [priceInfo, setPriceInfo] = useState<PriceData>();
+  const priceMatch = useMatch("/:coinId/price");
+  const chartMatch = useMatch("/:coinId/chart");
   useEffect(() => {
     (async () => {
       const infoData = await (
@@ -182,10 +187,10 @@ function Coin() {
           </Overview>
 
           <Tabs>
-            <Tab>
+            <Tab isActive={chartMatch !== null}>
               <Link to={`/${coinId}/chart`}>Chart</Link>
             </Tab>
-            <Tab>
+            <Tab isActive={priceMatch !== null}>
               <Link to={`/${coinId}/price`}>Price</Link>
             </Tab>
           </Tabs>

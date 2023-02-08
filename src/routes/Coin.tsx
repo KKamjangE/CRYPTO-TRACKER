@@ -1,6 +1,4 @@
 import {
-  Route,
-  Routes,
   useLocation,
   useParams,
   Link,
@@ -9,8 +7,6 @@ import {
 } from "react-router-dom";
 import styled from "styled-components";
 import { useState, useEffect } from "react";
-import Price from "./Price";
-import Chart from "./Chart";
 
 const Container = styled.div`
   padding: 0px 20px;
@@ -42,6 +38,7 @@ const OverviewItem = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 33%;
 
   span:first-child {
     font-size: 10px;
@@ -129,9 +126,9 @@ interface PriceData {
 }
 
 function Coin() {
-  const [loading, setLoading] = useState(true);
   const { coinId } = useParams();
   const { state } = useLocation();
+  const [loading, setLoading] = useState(true);
   const [info, setInfo] = useState<InfoData>();
   const [priceInfo, setPriceInfo] = useState<PriceData>();
   const priceMatch = useMatch("/:coinId/price");

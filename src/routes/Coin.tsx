@@ -159,9 +159,11 @@ function Coin() {
         </title>
       </Helmet>
       <Header>
-        <Title>
-          {state?.name ? state.name : loading ? "Loading..." : infoData?.name}
-        </Title>
+        <Link to={"/"}>
+          <Title>
+            {state?.name ? state.name : loading ? "Loading..." : infoData?.name}
+          </Title>
+        </Link>
       </Header>
       {loading ? (
         <Loader>Loading...</Loader>
@@ -202,7 +204,7 @@ function Coin() {
             </Tab>
           </Tabs>
           <Routes>
-            <Route path="price" element={<Price />} />
+            <Route path="price" element={<Price coinId={coinId!} />} />
             <Route path="chart" element={<Chart coinId={coinId!} />} />
           </Routes>
         </>

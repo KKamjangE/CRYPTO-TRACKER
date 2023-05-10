@@ -3534,11 +3534,6 @@ cosmiconfig@^7, cosmiconfig@^7.0.0, cosmiconfig@^7.0.1:
     path-type "^4.0.0"
     yaml "^1.10.0"
 
-craco-alias@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/craco-alias/-/craco-alias-3.0.1.tgz#45e5cb338b222a7f62d17e398b54aff7cf1572af"
-  integrity sha512-N+Qaf/Gr/f3o5ZH2TQjMu5NhR9PnT1ZYsfejpNvZPpB0ujdrhsSr4Ct6GVjnV5ostCVquhTKJpIVBKyL9qDQYA==
-
 create-require@^1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/create-require/-/create-require-1.1.1.tgz#c1d7e8f1e5f6cfc9ff65f9cd352d37348756c333"
@@ -7793,6 +7788,11 @@ react-apexcharts@^1.4.0:
   integrity sha512-DrcMV4aAMrUG+n6412yzyATWEyCDWlpPBBhVbpzBC4PDeuYU6iF84SmExbck+jx5MUm4U5PM3/T307Mc3kzc9Q==
   dependencies:
     prop-types "^15.5.7"
+
+react-app-alias@^2.2.2:
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/react-app-alias/-/react-app-alias-2.2.2.tgz#2b486cd21cdba362df9ef71a06ab73e0a8ea660d"
+  integrity sha512-mkebUkGLEBA8A8jripu5h1e3cccGl8wWHCUmyJo43/KhaN91DO3qyCLWGWneogqkG4PWhp2JHtlCJ06YSdHVYQ==
 
 react-app-polyfill@^3.0.0:
   version "3.0.0"

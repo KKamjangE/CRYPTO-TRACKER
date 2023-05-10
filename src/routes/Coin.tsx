@@ -8,10 +8,10 @@ import {
 } from "react-router-dom";
 import styled from "styled-components";
 import { useQuery } from "react-query";
-import { fetchCoinInfo, fetchCoinTickers } from "./../api";
-import Price from "./Price";
-import Chart from "./Chart";
 import { Helmet } from "react-helmet-async";
+import { fetchCoinInfo, fetchCoinTickers } from "@/api";
+import Price from "@/routes/Price";
+import Chart from "@/routes/Chart";
 
 const Container = styled.div`
   padding: 0px 20px;

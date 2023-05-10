@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { useQuery } from "react-query";
 import Helmet from "react-helmet";
-import { useSetRecoilState } from "recoil";
+import { useRecoilState, useSetRecoilState } from "recoil";
 import { fetchCoins } from "@/api";
 import { isDarkAtom } from "@/atoms";
 
@@ -17,7 +17,8 @@ interface ICoin {
 }
 
 function Coins() {
-  const setDarkAtom = useSetRecoilState(isDarkAtom);
+  // const setDarkAtom = useSetRecoilState(isDarkAtom);
+  const [isDark, setDarkAtom] = useRecoilState(isDarkAtom);
   const toggleDarkAtom = () => setDarkAtom((prev) => !prev);
   const { isLoading, data } = useQuery<ICoin[]>(["allCoins"], fetchCoins);
   return (
@@ -27,7 +28,9 @@ function Coins() {
       </Helmet>
       <Header>
         <Title>Coin Tracker</Title>
-        <button onClick={toggleDarkAtom}>Toggle Mode</button>
+        <ThemeButton onClick={toggleDarkAtom}>
+          {isDark ? "Light Mode" : "Dark Mode"}
+        </ThemeButton>
       </Header>
       {isLoading ? (
         <Loader>Loading...</Loader>
@@ -63,7 +66,7 @@ const Container = styled.div`
 const Header = styled.header`
   height: 10vh;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 `;
 const CoinsList = styled.ul``;
@@ -97,6 +100,20 @@ const Img = styled.img`
   width: 35px;
   height: 35px;
   margin-right: 10px;
+`;
+const ThemeButton = styled.button`
+  background-color: ${(props) => props.theme.cardBgColor};
+  color: ${(props) => props.theme.textColor};
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 8px 10px;
+  transition: 0.2s ease-in;
+  &:hover {
+    cursor: pointer;
+    color: ${(props) => props.theme.accentColor};
+  }
+  &:active {
+  }
 `;
 
 export default Coins;

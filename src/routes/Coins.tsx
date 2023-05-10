@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { useQuery } from "react-query";
 import Helmet from "react-helmet";
-import { useRecoilState, useSetRecoilState } from "recoil";
+import { useRecoilState } from "recoil";
 import { fetchCoins } from "@/api";
 import { isDarkAtom } from "@/atoms";
 

@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@craco/craco": "^7.1.0",
     "@tanstack/react-query": "^4.24.4",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
@@ -54,6 +55,7 @@
     "@tanstack/react-query-devtools": "^4.24.4",
     "@types/react-helmet": "^6.1.6",
     "@types/react-router-dom": "^5.3.3",
-    "@types/recoil": "^0.0.9"
+    "@types/recoil": "^0.0.9",
+    "craco-alias": "^3.0.1"
   }
 }

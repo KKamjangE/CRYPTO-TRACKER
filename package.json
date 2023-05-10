@@ -56,6 +56,6 @@
     "@types/react-helmet": "^6.1.6",
     "@types/react-router-dom": "^5.3.3",
     "@types/recoil": "^0.0.9",
-    "craco-alias": "^3.0.1"
+    "react-app-alias": "^2.2.2"
   }
 }
